@@ -1,0 +1,66 @@
+:root{
+  --green-900:#142C14; /* dark green */
+  --green-800:#2D5128; /* cal poly */
+  --green-700:#537B2F; /* fern */
+  --green-500:#8DA750; /* asparagus */
+  --green-200:#E4EB9C; /* mindaro */
+
+  /* roles (elige tus “semánticos”) */
+  --bg: var(--green-200);
+  --surface: #ffffff;
+  --text: #0f1a0f;
+  --primary: var(--green-700);
+  --primary-contrast: #ffffff;
+  --primary-hover: var(--green-800);
+  --accent: var(--green-500);
+  --border: color-mix(in oklab, var(--green-800) 20%, #ffffff);
+  --muted: color-mix(in oklab, var(--green-200) 60%, #ffffff);
+}
+
+/* resetcito básico */
+*{box-sizing:border-box}
+body{
+  margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial;
+  background: var(--bg); color: var(--text);
+}
+
+/* helpers */
+.container{max-width:780px;margin:auto;padding:24px}
+.card{
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px; padding:20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+}
+.stack{display:grid; gap:12px}
+.row{display:flex; gap:8px; flex-wrap:wrap}
+
+input,button{
+  font:inherit; padding:10px 12px; border-radius:12px; border:1px solid var(--border);
+}
+input{ background:#fff }
+button{
+  background: var(--primary); color: var(--primary-contrast);
+  border-color: transparent; cursor:pointer; transition: transform .05s ease, background .2s ease;
+}
+button:hover{ background: var(--primary-hover) }
+button:active{ transform: translateY(1px) }
+
+/* variante secundaria */
+.button--ghost{
+  background: transparent; color: var(--primary);
+  border-color: var(--primary); 
+}
+.button--ghost:hover{ background: color-mix(in oklab, var(--primary) 10%, transparent) }
+
+/* badge/acento */
+.badge{
+  display:inline-block; padding:.35rem .6rem; border-radius:999px; 
+  background: var(--accent); color:#1d2a12; font-weight:600;
+}
+
+/* gradiente bonito para headers */
+.header{
+  padding:28px; border-radius:20px; color:#fff;
+  background: linear-gradient(90deg, var(--green-900), var(--green-700) 60%, var(--green-500));
+}
